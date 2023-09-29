@@ -1,8 +1,13 @@
 require('dotenv').config();
 const cron = require('node-cron')
 const axios = require('axios');
-
+const express = require('express')
+const app = express();
 const { formatDate } = require("./formatDate")
+const PORT = process.env.PORT || 3002
+
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 
 
 /**************  CRON JOB  ***************/
@@ -29,3 +34,10 @@ try {
     }
 })
 
+app.get('/', (req, res) => {
+    res.status(200).send(`<h2>Running Good 🎉</h2>`)
+  });
+
+app.listen(PORT, () => {
+    console.log(`\nListening all requests on port ${PORT}`);
+});
