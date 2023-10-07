@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm install axios node-cron nodemon moment-timezone dotenv express --save",
+    "build": "npm install axios node-cron nodemon moment-timezone dotenv express morgan --save",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
