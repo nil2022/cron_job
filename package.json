@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "build": "npm install axios node-cron nodemon moment-timezone dotenv express morgan --save",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "audit:fix": "npm audit fix --dry-run --json"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +18,12 @@
     "express": "^4.18.2",
     "moment-timezone": "^0.5.43",
     "morgan": "^1.10.0",
-    "node-cron": "^3.0.2",
-    "nodemon": "^3.0.1"
+    "node-cron": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.20.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
