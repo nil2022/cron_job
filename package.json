@@ -5,9 +5,8 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "build": "npm install axios node-cron nodemon moment-timezone dotenv express morgan --save",
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "dev": "node --env-file=.env --watch index.js",
+    "start": "node --env-file=.env index.js",
     "audit:fix": "npm audit fix --dry-run --json"
   },
   "author": "",
@@ -21,9 +20,6 @@
     "node-cron": "^3.0.2"
   },
   "engines": {
-    "node": ">=18.19.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
+    "node": ">=22.0.0"
   }
 }
